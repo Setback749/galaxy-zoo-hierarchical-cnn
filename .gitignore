@@ -1,0 +1,28 @@
+# Galaxy Zoo datasets and benchmark archives
+*.zip
+training_solutions_rev1.csv
+
+# Downloaded third-party reference material
+Jay Speidell - Galaxy Zoo Challenge.html
+
+# Python and Jupyter temporary files
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Python environments and secrets
+.venv/
+venv/
+env/
+.conda/
+.env
+.env.*
+
+# Trained model checkpoints
+*.pt
+*.pth
+*.ckpt
+
+# Operating system files
+.DS_Store
+Thumbs.db
