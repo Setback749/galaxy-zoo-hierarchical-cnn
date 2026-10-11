@@ -1,0 +1,2 @@
+seed,baseline_accuracy,baseline_macro_f1,hierarchical_accuracy,hierarchical_macro_f1,task1_errors,task2_errors,total_errors,oracle_accuracy,oracle_gain
+48,0.7357357357357357,0.7213641077750133,0.7247247247247247,0.7156895891041501,225,50,275,0.9409409409409409,0.21621621621621623
