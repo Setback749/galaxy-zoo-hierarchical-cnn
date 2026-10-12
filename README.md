@@ -105,6 +105,8 @@ Paired t-tests across the 30 matched seeds found:
 
 These results indicate a small but statistically significant average advantage for the end-to-end CNN under the experimental setup.
 
+After Holm correction for the two metric comparisons, the adjusted p-values were 0.0107 for accuracy and 0.0300 for macro-F1. Both remained below the significance threshold of 0.05.
+
 ### Hierarchical Error Propagation
 
 Across the 30 validation runs, hierarchical classification errors were attributed to:
@@ -132,15 +134,7 @@ These single-seed test results are reported separately from the 30-seed validati
 ## Dependencies
 
 - Python 3.11
-- PyTorch
-- torchvision
-- NumPy
-- pandas
-- scikit-learn
-- SciPy
-- matplotlib
-- Pillow
-- Jupyter
+- python -m pip install torch torchvision numpy pandas scikit-learn scipy matplotlib pillow jupyter
 
 A CUDA-compatible GPU is recommended but is not required.
 
@@ -157,6 +151,8 @@ The repeated experiment loop saves completed seed results to `repeated_experimen
 
 **Note:** Reproducing all 30 seeds requires training both CNN architectures 30 times. Runtime depends on the available hardware.
 
+**Reproducing the reported results:** The repository includes `repeated_experiment_results.csv`, which contains the saved results from the 30 matched-seed experiments. To reproduce the summary statistics and figures without retraining all models, run the notebook setup and analysis cells while skipping the repeated-training loop. To reproduce the full experiment from scratch, run the repeated-training loop using the documented seeds and settings. The final held-out test evaluation is a separate experiment using the representative seed selected from validation results.
+
 ## Repository Contents
 
 - `AIML339 - Project Notebook.ipynb` — data preparation, model implementations, training, evaluation and analysis
@@ -166,6 +162,7 @@ The repeated experiment loop saves completed seed results to `repeated_experimen
 - `cnn_paired_accuracy_differences.png` — paired validation accuracy differences
 - `hierarchical_error_propagation.png` — hierarchical error decomposition
 - `cnn_training_time_boxplot.png` — training-time comparison
+- `cnn_learning_curves.png` — representative-seed training and validation loss curves
 
 ## Limitations and Future Work
 
@@ -175,6 +172,10 @@ Potential extensions include deeper Galaxy Zoo decision hierarchies, larger trai
 
 ## Data and Attribution
 
-Galaxy Zoo data should be obtained from the original distribution source. Dataset archives and third-party materials are not redistributed in this repository.
+The galaxy images and volunteer-derived classification probabilities were obtained from the Galaxy Zoo Challenge dataset on Kaggle. Dataset files are not redistributed in this repository; users should obtain them directly from the original source and comply with the applicable access conditions.
+
+The Galaxy Zoo decision hierarchy informed the simplified hierarchical classification design. [Jay Speidell's Galaxy Zoo Challenge project](https://jayspeidell.github.io/portfolio/project07-galazy-zoo/) was consulted as a reference for preprocessing and CNN-based image classification. No code was directly copied from that project.
+
+OpenAI ChatGPT was used to assist with code development and debugging, experiment planning, statistical analysis, documentation and report drafting. The implementation, experiments and submitted work were reviewed and adapted by the project author.
 
 This repository contains work produced for the AIML339 capstone project at Victoria University of Wellington.
