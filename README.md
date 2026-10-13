@@ -163,6 +163,7 @@ The repeated experiment loop saves completed seed results to `repeated_experimen
 - `hierarchical_error_propagation.png` — hierarchical error decomposition
 - `cnn_training_time_boxplot.png` — training-time comparison
 - `cnn_learning_curves.png` — representative-seed training and validation loss curves
+- `cnn_test_confusion_matrices.png` — side-by-side confusion matrices for the representative-seed held-out test evaluation, with per-class evaluation in the notebook
 
 ## Limitations and Future Work
 
