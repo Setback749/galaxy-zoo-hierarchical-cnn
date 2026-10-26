@@ -26,3 +26,6 @@ env/
 # Operating system files
 .DS_Store
 Thumbs.db
+
+# Keep generated presentation images locally
+presentation_images/
